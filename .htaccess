@@ -1,9 +1,1 @@
-RewriteEngine On
 
-# bez www na www
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
-
-# http na https
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*) https://%{SERVER_NAME}/$1 [R=301,L]
